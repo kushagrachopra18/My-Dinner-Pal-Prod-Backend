@@ -27,6 +27,13 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 // This function is for if we ever want to charge one off payments
 // It currently charges a static amount of $10.99
 app.post('/pay', async (req, res) => {
