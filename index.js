@@ -25,9 +25,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.use(cors({
-  origin: 'https://kushagrachopra18.github.io'
-}));
+// app.use(cors({
+//   origin: 'https://kushagrachopra18.github.io'
+// }));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // This function is for if we ever want to charge one off payments
 // It currently charges a static amount of $10.99
