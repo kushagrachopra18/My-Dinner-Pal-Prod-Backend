@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cors({
-  origin: 'https://kushagrachopra18.github.io/My-Dinner-Pal-React-Prod-Frontend'
+  origin: 'https://kushagrachopra18.github.io'
 }));
 
 // This function is for if we ever want to charge one off payments
