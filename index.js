@@ -142,6 +142,7 @@ app.post('/sub', async (req, res) => {
 });
 
 app.post('/hooks', bodyParser.raw({type: 'application/json'}), async (req, res) => {
+  console.log("Running hooks");
   const sig = req.headers['stripe-signature'];
 
   let event;
@@ -152,6 +153,7 @@ app.post('/hooks', bodyParser.raw({type: 'application/json'}), async (req, res) 
   catch (err) {
     response.status(400).send(`Webhook Error: ${err.message}`);
   }
+  console.log(event);
   
   try {
     // console.log(req.body.type);
