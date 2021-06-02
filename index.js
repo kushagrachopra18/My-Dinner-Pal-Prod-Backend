@@ -215,4 +215,4 @@ app.post('/hooks', bodyParser.raw({type: 'application/json'}), async (req, res) 
   }
 });
 
-app.listen(port, () => console.log(`My Dinner Pal Backend listening on port ${port}!`))
+app.listen(process.env.PORT || port, () => console.log(`My Dinner Pal Backend listening on port ${port}!`))
