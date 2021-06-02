@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 // Set your secret key. Remember to switch to your live secret key in production.
 // See your keys here: https://dashboard.stripe.com/apikeys
 const stripe = require('stripe')('sk_test_51IgxffKIKjam29K6l4vYNoFkFAMBDpN6SgyhLEUb9V1tSWp0zGfSEAoDavaXOeazfWk4MgdzXL35aZ9hLwf4V6VG00EBzhvqJu');
+const endpointSecret = 'whsec_ug2I86CGKPaWIBulnTik9K5gcvKgCw31';
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 mailchimp.setConfig({
   apiKey: "138672d945f160131700e77c12c3000a-us1",
@@ -141,9 +142,20 @@ app.post('/sub', async (req, res) => {
 });
 
 app.post('/hooks', bodyParser.raw({type: 'application/json'}), async (req, res) => {
+  const sig = req.headers['stripe-signature'];
+
+  let event;
+
+  try {
+    event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
+  }
+  catch (err) {
+    response.status(400).send(`Webhook Error: ${err.message}`);
+  }
+  
   try {
     // console.log(req.body.type);
-    if(req.body.type === "setup_intent.succeeded"){
+    if(event.type === "setup_intent.succeeded"){
       // The customer below is used for testing
       // const customer = await stripe.customers.retrieve('cus_JXRYR5nFi5sQ6J');
       const customer = await stripe.customers.retrieve(req.body.data.object.customer);
