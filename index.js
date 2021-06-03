@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // app.use(cors({
-//   origin: 'https://kushagrachopra18.github.io'
+//   origin: 'https://mydinnerpal.com'
 // }));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
