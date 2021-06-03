@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 // Set your secret key. Remember to switch to your live secret key in production.
 // See your keys here: https://dashboard.stripe.com/apikeys
-const stripe = require('stripe')('sk_test_51IgxffKIKjam29K6l4vYNoFkFAMBDpN6SgyhLEUb9V1tSWp0zGfSEAoDavaXOeazfWk4MgdzXL35aZ9hLwf4V6VG00EBzhvqJu');
+const stripe = require('stripe')('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');
 const endpointSecret = 'whsec_ug2I86CGKPaWIBulnTik9K5gcvKgCw31';
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 mailchimp.setConfig({
