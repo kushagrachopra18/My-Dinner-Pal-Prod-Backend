@@ -143,21 +143,10 @@ app.post('/sub', async (req, res) => {
 
 app.post('/hooks', bodyParser.raw({type: 'application/json'}), async (req, res) => {
   console.log("Running hooks");
-  // const sig = req.headers['stripe-signature'];
-
-  // let event;
-
-  // try {
-  //   event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
-  // }
-  // catch (err) {
-  //   res.status(400).send(`Webhook Error: ${err.message}`);
-  // }
-  // console.log(event);
   
   try {
     // console.log(req.body.type);
-    if(event.type === "setup_intent.succeeded"){
+    if(req.body.type === "setup_intent.succeeded"){
       // The customer below is used for testing
       // const customer = await stripe.customers.retrieve('cus_JXRYR5nFi5sQ6J');
       const customer = await stripe.customers.retrieve(req.body.data.object.customer);
