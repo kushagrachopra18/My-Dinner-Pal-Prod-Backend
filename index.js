@@ -82,9 +82,9 @@ app.post('/sub', async (req, res) => {
     let price = '';
     if(plan === 'Pro'){
       if(billCycle === 'year'){
-        price = 'price_1ItJN0KIKjam29K6uHPGOeym';
+        price = 'price_1IyKcKKIKjam29K6nSX68amw';
       }else if(billCycle === 'month'){
-        price = 'price_1ItJN0KIKjam29K6wZaABUlD';
+        price = 'price_1IyKcKKIKjam29K6mHw6WQtx';
       }else{
         err.raw.message = 'Contact us for support! Bill Cycle value unexpected';
         err.code = 'billCycle_unexpected';
@@ -92,9 +92,9 @@ app.post('/sub', async (req, res) => {
       }
     } else if(plan === 'Ideas Only'){
       if(billCycle === 'year'){
-        price = 'price_1ItJQvKIKjam29K65EjKKfvp';
+        price = 'price_1IyKduKIKjam29K6YNcjHiH5';
       }else if(billCycle === 'month'){
-        price = 'price_1ItJQuKIKjam29K6z6zl5gvp';
+        price = 'price_1IyKduKIKjam29K6J7mLhQOH';
       }else{
         err.raw.message = 'Contact us for support! Bill Cycle value unexpected';
         err.code = 'billCycle_unexpected';
