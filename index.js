@@ -37,7 +37,7 @@ var con = mysql.createPool({
 const endpointSecret = process.env.ENDPOINT_SECRET;
 // Set your secret key. Remember to switch to your live secret key in production.
 // See your keys here: https://dashboard.stripe.com/apikeys
-const stripe = require('stripe')(process.env.STRIPE_SK_TEST);
+const stripe = require('stripe')(process.env.STRIPE_LIVE_KEY);
 
 //--------------Mailchimp Integration Setup-----------------
 
