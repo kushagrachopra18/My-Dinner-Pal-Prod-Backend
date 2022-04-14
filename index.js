@@ -16,9 +16,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+
+let whitelist = ['https://mydinnerpal.com', 'http://localhost:8080']
 app.use(cors({
-  origin: ['https://mydinnerpal.com', 'http://localhost:8080']
+  origin: function(origin, callback){
+    // allow requests with no origin 
+    if(!origin) return callback(null, true);
+    if(whitelist.indexOf(origin) === -1){
+      var message = `The CORS policy for this origin doesn't ' +
+                'allow access from the particular origin.`;
+      return callback(new Error(message), false);
+    }
+    return callback(null, true);
+  }
 }));
+
+// app.use(cors({
+//   origin: ['https://mydinnerpal.com', 'http://localhost:8080']
+// }));
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
 //   res.header("Access-Control-Allow-Credentials", true);
