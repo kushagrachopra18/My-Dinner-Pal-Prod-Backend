@@ -724,14 +724,14 @@ app.post('/send_password_reset_email', async (req, res) => {
               <p>You recently requested to reset your My Dinner Pal password. Please use the button below to reset it :)</p>
               <p class="bold">This password reset link is only valid for the next 2 hours</p>
               <div class="reset_password_button_wrapper">
-                  <a href="https://mydinnerpal.com//reset_password?token=${token}" class="reset_password_button" style="color:white;">Reset your password</a>
+                  <a href="https://mydinnerpal.com/reset_password?token=${token}" class="reset_password_button" style="color:white;">Reset your password</a>
               </div>
               <p>If you did not request a password reset, please ignore this email or send an email to 
                   support@mydinner.com to report suspicious activity :)</p>
               <br>
               <hr>
               <p>If you're having trouble with the button above, copy and paste the following url into your 
-                  browser: https://mydinnerpal.com//reset_password?token=${token}</p>
+                  browser: https://mydinnerpal.com/reset_password?token=${token}</p>
           </div>
       </body>
     `;
