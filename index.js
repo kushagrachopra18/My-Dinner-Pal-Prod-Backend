@@ -16,6 +16,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+app.use(cors({
+  origin: ['https://mydinnerpal.com', 'http://localhost:8080']
+}));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:8080"); // update to match the domain you will make the request from
@@ -23,9 +26,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-// app.use(cors({
-//   origin: ['https://mydinnerpal.com', 'http://localhost:8080']
-// }));
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
 //   res.header("Access-Control-Allow-Credentials", true);
