@@ -5,12 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.43",
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mysql": "^2.18.1",
     "stripe": "^8.149.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
