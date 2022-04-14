@@ -21,8 +21,7 @@ app.use(cors({
 }));
 
 app.use(function(req, res, next) {
-  console.log('used');
-  res.header("Access-Control-Allow-Origin", "http://localhost:8080"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", ['https://mydinnerpal.com', 'http://localhost:8080']); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
@@ -47,7 +46,7 @@ var con = mysql.createPool({
 const endpointSecret = process.env.ENDPOINT_SECRET;
 // Set your secret key. Remember to switch to your live secret key in production.
 // See your keys here: https://dashboard.stripe.com/apikeys
-const stripe = require('stripe')(process.env.STRIPE_LIVE_KEY);
+const stripe = require('stripe')(process.env.STRIPE_SK_TEST);
 
 //--------------Mailchimp Integration Setup-----------------
 
