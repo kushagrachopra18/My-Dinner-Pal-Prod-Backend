@@ -16,8 +16,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+// app.use(cors({
+//   origin: ['https://mydinnerpal.com', 'http://localhost:8080', 'http://localhost:3000']
+// }));
+
 app.use(cors({
-  origin: ['https://mydinnerpal.com', 'http://localhost:8080', 'http://localhost:3000']
+  origin: '*'
 }));
 
 app.use(function(req, res, next) {
