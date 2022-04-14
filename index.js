@@ -912,7 +912,7 @@ app.post('/sub', async (req, res) => {
     res.json({'client_secret': client_secret, 'status': status});
   } catch (error) {
     console.log('There was an error');
-    // console.log(error);
+    console.log(error);
     res.json(error);
   }
 });
