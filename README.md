@@ -4,7 +4,7 @@ This repo contains the backend application for mydinnerpal.com. Make with Node.j
 
 <img src="images/My_Dinner_Pal_Logo.png" alt="logo" width="100"/>
 
-This API contains the following enpoints for the frontend application and for webhooks that are connected to it:
+This API contains the following endpoints for the frontend application and for webhooks that are connected to it:
 
 ## User Auth and Account Management
 
@@ -24,4 +24,4 @@ This API contains the following enpoints for the frontend application and for we
 
 ## MailChimp Integration
 
-* '/hooks' - (POST) - Expects a post request from a particular Stripe webhook and uses the information in that webhook to subscribe a given ayingcustomer to the appropriate paid email list
+* '/hooks' - (POST) - Expects a post request from a particular Stripe webhook and uses the information in that webhook to subscribe a given paying customer to the appropriate paid email list
