@@ -764,7 +764,7 @@ app.post('/send_password_reset_email', async (req, res) => {
   });
 });
 
-app.post('/deleteAccount', async (req, res) => {
+app.post('/deleteAccount', verifyJWT, async (req, res) => {
   //Check if the user exists
   const userData = await getUserData(req.body.email);
   if (userData.foundUser == false) {
