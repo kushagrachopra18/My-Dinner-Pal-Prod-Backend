@@ -1,6 +1,6 @@
 # My Dinner Pal Backend API
 
-This repo contains the production backend for mydinnerpal.com. Make with Node.js and Express.js. Includes integrations with Stripe (recurring payments) and Mailchimp APIs, user auth using JWTs, built ‘mass emailer’ using SendGrid SMTP and Nodemailer (just used for password recovery in production but used for meal plan distribution in features that are currently just in dev)
+This repo contains the production backend for mydinnerpal.com. Make with Node.js and Express.js and deployed on Heroku. Includes integrations with Stripe (recurring payments) and Mailchimp APIs, user auth using JWTs, built ‘mass emailer’ using SendGrid SMTP and Nodemailer (just used for password recovery in production but used for meal plan distribution in features that are currently just in dev).
 
 <img src="images/My_Dinner_Pal_Logo.png" alt="logo" width="100"/>
 
