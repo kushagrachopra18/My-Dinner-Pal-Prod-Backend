@@ -20,7 +20,7 @@ This API contains the following endpoints for the frontend application and for w
 ## Stripe Integration
 
 * '/pay' - (POST) - Used for testing. Creates a payment intent to charge a customer a static price of $10.99
-* '/sub' - (POST) - Subscribes a paying customer to the appropriate payed email list and returns a client secret
+* '/sub' - (POST) - Subscribes a paying customer to the appropriate reccuring payment plan for the payed email list that they signed up for and returns a client secret
 
 ## MailChimp Integration
 
